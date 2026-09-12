@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/customers")
+@RequestMapping("api/v2/customers")
 public class CustomerController {
 
     @Autowired
@@ -36,6 +36,6 @@ public class CustomerController {
     public void updateCustomer(@PathVariable("customerId") Integer id,
                                @RequestBody Customer cust){
 
-        customerService.updateCustomer(cust);
+        customerService.updateCustomer(id, cust);
     }
 }
